@@ -12,6 +12,7 @@ clone git or download
 
 ``
 $ git clone https://github.com/hycript/webpack-boilerplate.git <yourAppName>
+
 $ cd <yourAppName>
 `` 
 
