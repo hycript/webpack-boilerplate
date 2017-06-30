@@ -39,18 +39,23 @@ let config = {
     },
     module: {
         rules: [
-            registRule.eslint({ emitError: true }),
+            // registRule.eslint({ emitError: true }),
             registRule.js(),
+            /*module style*/
             registRule.vue({ sourceMap, extract, modules: true, src, minimize }), //langs: ['less','sass','css'],
             registRule.less({ sourceMap, extract, modules: true, src, exclude, minimize }),
             registRule.sass({ sourceMap, extract, modules: true, src, exclude, minimize }),
             registRule.css({ sourceMap, extract, modules: true, src, exclude, minimize }),
+            /*global style*/
+            registRule.less({ sourceMap, extract, modules: false, src, include, minimize }),
+            registRule.sass({ sourceMap, extract, modules: false, src, include, minimize }),
             registRule.css({ sourceMap, extract, modules: false, src, include, minimize }),
+            /*file*/
             registRule.asset({ limit: 2048 }),
             registRule.file(),
             registRule.html({ minimize }),
             /*glslifyLoader*/
-            registRule.glsl(),
+            // registRule.glsl(),
         ]
     },
     resolve: {

@@ -15,7 +15,9 @@
 	<meta name="Description" content="" />
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+    <h1>Hello World ! <span>by webpack</span></h1>
+</div>
 </script>
 </body>
 </html>

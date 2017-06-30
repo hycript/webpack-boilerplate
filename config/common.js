@@ -7,7 +7,7 @@ const DIRNAME = process.cwd();
 
 let config = {
     dll: {
-        // lib: ['vue', 'vue-router', 'vuex', 'vue-axios', 'axios', 'lodash'],
+        lib: ['vue', 'vue-router', 'vuex', 'axios', 'lodash'],
         // lib: ['jquery', 'react', 'react-router', 'react-dom'],
     },
     dllType: 0, //0: no commons or dll , 1 : dll package, 2 : commonsChunk;
@@ -25,12 +25,12 @@ config.Resource = {
     page: 'views',
     assetName: '[path][name].[ext]?[hash:8]',
     jsDist: 'js',
-    jsName: '[name].[chunkhash:8].js',
+    jsName: _DEV_ ? '[name].[hash:8].js' : '[name].[chunkhash:8].js',
     cssDist: 'css',
-    cssName: '[name].[chunkhash:8].css',
+    cssName: _DEV_ ? '[name].[hash:8].css' : '[name].[chunkhash:8].css',
     cssExclude: [/node_modules/, /cssglobal/, /plugin/, /assets/],
     copy: {
-        path: ['assets'],
+        // path: ['assets'],
         // ignore: [{ glob: '**/*', dot: true }]
     }
 };

@@ -33,6 +33,7 @@ let config = {
             registRule.eslint({ emitError: true }),
             registRule.js(),
             registRule.vue({ sourceMap, extract, modules: true, src, minimize }), //langs: ['less','sass','css'],
+            /*module style*/
             registRule.less({ sourceMap, extract, modules: true, src, exclude, minimize }),
             registRule.sass({ sourceMap, extract, modules: true, src, exclude, minimize }),
             registRule.css({ sourceMap, extract, modules: true, src, exclude, minimize }),
@@ -40,11 +41,12 @@ let config = {
             registRule.less({ sourceMap, extract, modules: false, src, include, minimize }),
             registRule.sass({ sourceMap, extract, modules: false, src, include, minimize }),
             registRule.css({ sourceMap, extract, modules: false, src, include, minimize }),
+            /*file*/
             registRule.asset({ limit: 2048 }),
             registRule.file({}),
             registRule.html({ minimize }),
             /*glslifyLoader*/
-            registRule.glsl(),
+            // registRule.glsl(),
         ]
     },
     resolve: CFG.Resolve,
